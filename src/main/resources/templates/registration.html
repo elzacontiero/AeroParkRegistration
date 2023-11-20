@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container my-5">
+
+
+    <div class="alert alert-success" role="alert" th:if="${showSuccess}">
+        <p th:text="${message}"></p>
+    </div>
+
+    <div class="alert alert-danger" role="alert" th:if="${showError}">
+        <p th:text="${message}"></p>
+    </div>
+
+    <h1>Registration Form</h1>
+    <div class="col-lg-8 px-0">
+        <p>This is the AeroPark registration form</p>
+    </div>
+
+    <form action="#" th:action="@{/registration}" th:object="${registrationForm}" method="post">
+
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" th:field="*{inputTitle}">
+            <div id="titleHelp" class="form-text">Example: Mr., Mrs., Ms., Sir, etc.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputFirstName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="inputFirstName" th:field="*{inputFirstName}">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputLastName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="inputLastName" th:field="*{inputLastName}">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" th:field="*{inputEmail}">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputAddress1" class="form-label">Address line 1</label>
+            <input type="text" class="form-control" id="inputAddress1" aria-describedby="addressHelp" th:field="*{inputAddress1}" >
+            <div id="addressHelp" class="form-text">Fill in with the first line of your address.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputAddress2" class="form-label">Address line 2</label>
+            <input type="text" class="form-control" id="inputAddress2" aria-describedby="addressHelp2" th:field="*{inputAddress2}">
+            <div id="addressHelp2" class="form-text">Fill in with the second line of your address.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity" th:field="*{inputCity}">
+        </div>
+
+        <div class="mb-3">
+            <label for="inputPostcode" class="form-label">Postcode</label>
+            <input type="text" class="form-control" id="inputPostcode" aria-describedby="postcodeHelp" th:field="*{inputPostcode}">
+            <div id="postcodeHelp" class="form-text">Enter your postcode.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputPhoneNumber" class="form-label">Phone number</label>
+            <input type="text" class="form-control" id="inputPhoneNumber" aria-describedby="phoneHelp" th:field="*{inputPhoneNumber}">
+            <div id="phoneHelp" class="form-text">Enter your phone number.</div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+</body>
+</html>
