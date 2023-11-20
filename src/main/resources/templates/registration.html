@@ -9,14 +9,17 @@
 
 <div class="container my-5">
 
+    <span th:if="${showError}">
+        <div class="alert alert-danger" role="alert">
+            <p th:text="${message}"></p>
+        </div>
+    </span>
+    <span th:unless="${showError}">
+        <div class="alert alert-success" role="alert">
+            <p th:text="${message}"></p>
+        </div>
+    </span>
 
-    <div class="alert alert-success" role="alert" th:if="${showSuccess}">
-        <p th:text="${message}"></p>
-    </div>
-
-    <div class="alert alert-danger" role="alert" th:if="${showError}">
-        <p th:text="${message}"></p>
-    </div>
 
     <h1>Registration Form</h1>
     <div class="col-lg-8 px-0">
