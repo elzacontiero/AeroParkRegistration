@@ -12,7 +12,7 @@ public class Converters {
         customer.setTitle(form.getInputTitle());
         customer.setFirstName(form.getInputFirstName());
         customer.setLastName(form.getInputLastName());
-        customer.setEmail(form.getInputEmail());
+        customer.setEmail(form.getInputEmail().toLowerCase());
         customer.setAddress1(form.getInputAddress1());
         customer.setAddress2(form.getInputAddress2());
         customer.setCity(form.getInputCity());
